@@ -1,0 +1,8 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "description": "This is a package.json for test",
+  "support": {
+    "target": "not valid"
+  }
+}

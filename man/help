@@ -1,0 +1,13 @@
+Install via npm:
+  npm i package-compliant -g
+
+Usage: package-compliant <command>
+
+where <command> is one of:
+  validate, help
+
+package-compliant <command> -h
+  will show quick help on <command>
+
+Usage via npx:
+  npx package-compliant validate

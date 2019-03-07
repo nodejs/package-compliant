@@ -1,3 +1,4 @@
+'use strict'
 
 const t = require('tap')
 const validate = require('../lib/support-validation')
@@ -23,7 +24,7 @@ test('basic validation', t => {
 test('required fields', t => {
   t.plan(3)
 
-  t.notOk(validate({}))
+  t.throws(() => validate({}), { errors: [] })
 
   validate({}, (err, res) => {
     t.equals(err.length, 3)
@@ -59,7 +60,7 @@ test('bad values on required fields', t => {
     backing: 'foobar'
   }
 
-  t.notOk(validate(toValidate))
+  t.throws(() => validate(toValidate), { errors: [] })
 
   validate(toValidate, (err, res) => {
     t.equals(err.length, 3)
@@ -81,7 +82,13 @@ test('bad url', t => {
     url: 'invalid-url'
   }
 
-  t.notOk(validate(toValidate))
+  t.throws(() => validate(toValidate), { errors: [{
+    keyword: /.*/,
+    dataPath: /.*/,
+    schemaPath: /.*/,
+    params: { format: /.*/ },
+    message: /.*/
+  }] })
 
   validate(toValidate, (err, res) => {
     t.equals(err.length, 1)

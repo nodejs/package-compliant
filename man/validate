@@ -1,0 +1,8 @@
+Usage: package-compliant validate [--file|-f <file path>] [--help|-h]
+  validate the package.json support property
+
+  -f, --file <package.json path>
+      package.json to validate agains package-maintenance guidelines
+
+  -h, --help
+      Show this message
