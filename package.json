@@ -1,6 +1,6 @@
 {
   "name": "package-compliant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Validate the `support` property in the `package.json`",
   "main": "lib/index.js",
   "bin": {
@@ -31,10 +31,10 @@
   "dependencies": {
     "ajv": "^6.9.2",
     "chalk": "^2.4.2",
+    "commist": "^1.1.0",
     "yargs-parser": "^13.0.0"
   },
   "devDependencies": {
-    "commist": "^1.1.0",
     "standard": "^12.0.1",
     "tap": "^12.5.3"
   }
