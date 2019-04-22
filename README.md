@@ -1,6 +1,7 @@
 # package-compliant
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.com/Eomm/package-compliant.svg?branch=master)](https://travis-ci.com/Eomm/package-compliant)
 
 Validate the `support` property in the `package.json` following the [package-maintenance guidelines][validation]!
 
