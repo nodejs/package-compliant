@@ -9,7 +9,7 @@ node_js:
   - "10"
   - "11"
 
-before_install:
+before_script:
   - npm ls
 
 notifications:
