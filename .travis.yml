@@ -9,6 +9,9 @@ node_js:
   - "10"
   - "11"
 
+before_install:
+  - npm ls
+
 notifications:
   email:
     on_success: never
