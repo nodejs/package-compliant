@@ -18,7 +18,12 @@
     "type": "git",
     "url": "git+https://github.com/Eomm/package-compliant.git"
   },
-  "keywords": [],
+  "keywords": [
+    "package",
+    "package-json",
+    "validation",
+    "support"
+  ],
   "author": "Manuel Spigolon <behemoth89@gmail.com> (https://github.com/Eomm)",
   "license": "MIT",
   "bugs": {

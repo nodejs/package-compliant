@@ -51,14 +51,14 @@ const packageCompliant = require('package-compliant')
 const aPackageJson = require('./package.json')
 
 try {
-  packageCompliant.validatePackageJson(aPackageJson)
+  packageCompliant.validateSupportField(aPackageJson.support)
   // the package is valid
 } catch (err) {
   // the package has some errors
 }
 
 // or you can use callback:
-packageCompliant.validatePackageJson(aPackageJson, (err, valid) => {
+packageCompliant.validateSupportField(aPackageJson.support, (err, valid) => {
   if (err) {
     // there are some errors!!
   }

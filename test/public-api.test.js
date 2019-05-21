@@ -4,8 +4,8 @@ const t = require('tap')
 const publicApi = require('../lib/index')
 const test = t.test
 
-test('validatePackageJson function', t => {
+test('validateSupportField function', t => {
   t.plan(1)
-  const func = publicApi.validatePackageJson
+  const func = publicApi.validateSupportField
   t.type(func, 'function')
 })
