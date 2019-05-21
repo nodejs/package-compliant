@@ -6,20 +6,30 @@
 Validate the `support` property in the `package.json` following the [package-maintenance guidelines][validation]!
 
 
-## Install and Usage
+## Install
+
+You can use this package as a CLI or as a Module if you need to use the core function of this module.
 
 ```
+// As a CLI
 npm i package-compliant -g
-package-compliant validate --file ./package-custom.json
-// or simply
-package-compliant validate
 
-// You can use also from your project folder:
-npx package-compliant validate
+// As a module
+npm i package-compliant
 ```
-
 
 ## Commands
+
+To run the commands you can execute:
+
+```sh
+package-compliant validate --file ./package-custom.json
+// or simply in a project folder
+package-compliant validate
+
+// npx is supported of course
+npx package-compliant validate
+```
 
 ### Validate
 
@@ -32,10 +42,33 @@ Validation applied:
 + ✔ Validate `support` property of the JSON `--file` if it exists. The default `--file` is the `package.json` in the directory where the command is executed.
 
 
-[validation]: https://raw.githubusercontent.com/nodejs/package-maintenance/781a6bb752f4928e9e5e916b10ba38eb5289f316/docs/drafts/Baseline%20practive%20-%20Document%20support%20levels.md
+## Module
+
+To use this package as a module you need to:
+
+```js
+const packageCompliant = require('package-compliant')
+const aPackageJson = require('./package.json')
+
+try {
+  packageCompliant.validatePackageJson(aPackageJson)
+  // the package is valid
+} catch (err) {
+  // the package has some errors
+}
+
+// or you can use callback:
+packageCompliant.validatePackageJson(aPackageJson, (err, valid) => {
+  if (err) {
+    // there are some errors!!
+  }
+})
+```
 
 
 ## Contributions
+
+Read the [CONTRIBUTING](./CONTRIBUTING.md) guidelines to start help us!
 
 ### Add new commands
 
@@ -48,3 +81,6 @@ Validation applied:
 ## License
 
 Copyright [Manuel Spigolon](https://github.com/Eomm), Licensed under [MIT](./LICENSE).
+
+
+[validation]: https://raw.githubusercontent.com/nodejs/package-maintenance/781a6bb752f4928e9e5e916b10ba38eb5289f316/docs/drafts/Baseline%20practive%20-%20Document%20support%20levels.md

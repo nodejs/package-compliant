@@ -9,7 +9,7 @@ const node = process.execPath
 
 test('help', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index', 'help'])
+  const cli = spawn(node, ['lib/cli', 'help'])
   cli.stdout.setEncoding('utf8')
   cli.stdout.on('data', (output) => {
     const contentHelp = h.readFileHelp('help')
@@ -20,7 +20,7 @@ test('help', t => {
 
 test('help when none params', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index'])
+  const cli = spawn(node, ['lib/cli'])
   cli.stdout.setEncoding('utf8')
   cli.stdout.on('data', (output) => {
     const contentHelp = h.readFileHelp('help')

@@ -4,7 +4,7 @@
   "description": "Validate the `support` property in the `package.json`",
   "main": "lib/index.js",
   "bin": {
-    "package-compliant": "lib/index.js"
+    "package-compliant": "lib/cli.js"
   },
   "support": {
     "target": "NONE",

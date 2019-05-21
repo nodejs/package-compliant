@@ -8,7 +8,7 @@ const node = process.execPath
 
 test('show help', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index', 'validate', '--help'])
+  const cli = spawn(node, ['lib/cli', 'validate', '--help'])
   cli.stdout.setEncoding('utf8')
   cli.stdout.on('data', (output) => {
     const contentHelp = h.readFileHelp('validate')
@@ -19,7 +19,7 @@ test('show help', t => {
 
 test('validate a valid package.json', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index', 'validate'])
+  const cli = spawn(node, ['lib/cli', 'validate'])
   cli.stdout.setEncoding('utf8')
   let stdout = ''
   cli.stdout.on('data', (data) => { stdout += data })
@@ -31,7 +31,7 @@ test('validate a valid package.json', t => {
 
 test('validate an invalid package.json', t => {
   t.plan(5)
-  const cli = spawn(node, ['lib/index', 'validate', '-f=./test/invalid-package.json'])
+  const cli = spawn(node, ['lib/cli', 'validate', '-f=./test/invalid-package.json'])
   cli.stdout.setEncoding('utf8')
   let stdout = ''
   cli.stdout.on('data', (data) => { stdout += data })
@@ -58,7 +58,7 @@ test('validate an invalid package.json', t => {
 
 test('validate an invalid package.json - missing support', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index', 'validate', '-f=./test/missing-package.json'])
+  const cli = spawn(node, ['lib/cli', 'validate', '-f=./test/missing-package.json'])
   cli.stdout.setEncoding('utf8')
   let stdout = ''
   cli.stdout.on('data', (data) => { stdout += data })
@@ -70,7 +70,7 @@ test('validate an invalid package.json - missing support', t => {
 
 test('read an unexisting file', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index', 'validate', '-f=this-file-does-not-exist'])
+  const cli = spawn(node, ['lib/cli', 'validate', '-f=this-file-does-not-exist'])
   cli.stdout.setEncoding('utf8')
   let stdout = ''
   cli.stdout.on('data', (data) => { stdout += data })
@@ -82,7 +82,7 @@ test('read an unexisting file', t => {
 
 test('read a not JSON file', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/index', 'validate', '-f=README.md'])
+  const cli = spawn(node, ['lib/cli', 'validate', '-f=README.md'])
   cli.stdout.setEncoding('utf8')
   let stdout = ''
   cli.stdout.on('data', (data) => { stdout += data })
