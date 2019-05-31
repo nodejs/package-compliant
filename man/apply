@@ -1,0 +1,11 @@
+Usage: package-compliant apply [--file|-f <file path>] [--help|-h] [--template|-t <string>]
+  validate the package.json support property
+
+  -f, --file <package.json path>
+      package.json to validate agains package-maintenance guidelines
+
+  -t, --template <string>
+      one of the default setup
+
+  -h, --help
+      Show this message
