@@ -6,11 +6,7 @@
   "bin": {
     "package-compliant": "lib/cli.js"
   },
-  "support": {
-    "target": "NONE",
-    "response": "BEST-EFFORT",
-    "backing": "HOBBY"
-  },
+  "support": true,
   "scripts": {
     "test": "standard && tap -J --coverage test/**/*.test.js"
   },
@@ -34,10 +30,7 @@
     "node": ">=6"
   },
   "dependencies": {
-    "ajv": "^6.9.2",
-    "chalk": "^2.4.2",
-    "commist": "^1.1.0",
-    "yargs-parser": "^13.0.0"
+    "@pkgjs/support": "0.0.3"
   },
   "devDependencies": {
     "standard": "^12.0.1",
