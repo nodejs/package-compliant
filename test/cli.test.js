@@ -2,18 +2,27 @@
 
 const { test } = require('tap')
 const { spawn } = require('child_process')
-
-const h = require('./helper')
+const packageCompliant = require('../lib/index')
 
 const node = process.execPath
 
-test('show help when no command found', t => {
+test('validate command', t => {
   t.plan(2)
-  const cli = spawn(node, ['lib/cli'])
+  const cli = spawn(node, ['lib/cli', 'validate'])
   cli.stdout.setEncoding('utf8')
   cli.stdout.on('data', (output) => {
-    const contentHelp = h.readFileHelp('help')
-    t.equals(output, contentHelp)
+    console.log(output)
+    t.like(output, 'is valid')
     t.pass()
+  })
+})
+
+test('validate utility', t => {
+  t.plan(2)
+  const success = packageCompliant.validateSupportField(require('../package-support.json'))
+  t.equal(success, true)
+
+  t.throws(() => {
+    packageCompliant.validateSupportField({ varsions: [{ missing: 'required-fields' }] })
   })
 })

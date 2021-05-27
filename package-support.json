@@ -1,0 +1,16 @@
+{
+  "versions": [
+    {
+      "version": "*",
+      "target": {
+        "node": "abandoned"
+      },
+      "response": {
+        "type": "best-effort"
+      },
+      "backing": {
+        "hobby": "https://github.com/nodejs/package-compliant"
+      }
+    }
+  ]
+}
